@@ -2,7 +2,7 @@ import React, { useEffect, useState,useCallback } from 'react';
 import {useFonts} from 'expo-font';
 import Home from './screens/home'
 import * as SplashScreen from 'expo-splash-screen';
-import {View,Text} from 'react-native';
+import {View,Text,ImageBackground} from 'react-native';
 import { createStackNavigator, } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
@@ -36,8 +36,14 @@ if(!fontsLoaded){
 }
 
   return(
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="home"> 
+    <NavigationContainer >
+      <Drawer.Navigator screenOptions={
+        {
+          drawerStyle:{
+               
+          }
+        }
+      } initialRouteName="home"> 
         <Drawer.Screen name="Home"component={Home} />
         <Drawer.Screen name='ReviewDetails' component={ReviewDetails} />
       </Drawer.Navigator>
